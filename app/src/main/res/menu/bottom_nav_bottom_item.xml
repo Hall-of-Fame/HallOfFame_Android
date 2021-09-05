@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/indexFragment"
+    <item android:id="@+id/homeFragment"
         android:title="首页"
-        android:icon="@drawable/ic_main_nav_home"
+        android:icon="@drawable/ic_main_bottom_nav_home"
         tools:ignore="HardcodedText" />
-    <item android:id="@+id/communityFragment"
+    <item android:id="@+id/searchFragment"
         android:title="分类"
-        android:icon="@drawable/ic_main_nav_search"
+        android:icon="@drawable/ic_main_bottom_nav_search"
         tools:ignore="HardcodedText" />
-    <item android:id="@+id/noticeFragment"
+    <item android:id="@+id/thirdFragment"
         android:title="暂无"
-        android:icon="@drawable/ic_main_nav_third"
+        android:icon="@drawable/ic_main_bottom_nav_third"
         tools:ignore="HardcodedText" />
 </menu>

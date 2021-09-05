@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LiveData
 
 /**
  *@author 985892345
@@ -29,11 +30,6 @@ abstract class BaseActivity(
 
 ) : AppCompatActivity() {
 
-    /**
-     * [onCreate] 方法在设置了部分主题后的回调
-     */
-    abstract fun onCreated(savedInstanceState: Bundle?)
-
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +41,6 @@ abstract class BaseActivity(
         if (isCancelStatusBar) { // 沉浸式状态栏
             cancelStatusBar()
         }
-        onCreated(savedInstanceState)
     }
 
     private fun cancelStatusBar() {
@@ -69,4 +64,12 @@ abstract class BaseActivity(
         }
         window.statusBarColor = Color.TRANSPARENT //把状态栏颜色设置成透明
     }
+
+    inline fun <T> LiveData<T>.observeNotNull(
+        crossinline onChange: (T) -> Unit
+    ) = observe(this@BaseActivity) {
+        it ?: return@observe
+        onChange(it)
+    }
 }
+

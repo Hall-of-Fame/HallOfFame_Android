@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -35,6 +36,10 @@ android {
     }
 }
 
+kapt {
+    useBuildCache = true // 开启 Gradle 构建缓存支持
+}
+
 dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -45,15 +50,18 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.12.0'
 
     // 协程
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3'
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     // 郭祥瑞的库————SlideShow
-    implementation 'com.github.985892345:SlideShow_Library:1.0.1'
+    implementation 'com.github.985892345:SlideShow_Library:1.0.2'
+
+    // PhotoView
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'

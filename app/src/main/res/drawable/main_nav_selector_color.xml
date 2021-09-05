@@ -3,10 +3,10 @@
 
     <item
         android:state_checked="true"
-        android:color="@color/main_nav_checked_color"/>
+        android:color="@color/main_bottomNav_checked_color"/>
 
     <item
         android:state_checked="false"
-        android:color="@color/main_nav_unchecked_color"/>
+        android:color="@color/main_bottomNav_unchecked_color"/>
 
 </selector>

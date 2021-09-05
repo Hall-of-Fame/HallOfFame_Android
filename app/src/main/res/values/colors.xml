@@ -10,8 +10,8 @@
 
     <color name="all_theme_color">#A63030</color>
 
-    <color name="main_nav_background">#FFFFFF</color>
-    <color name="main_nav_checked_color">#333333</color>
-    <color name="main_nav_unchecked_color">#9C9C9C</color>
+    <color name="main_bottomNav_background">#FFFFFF</color>
+    <color name="main_bottomNav_checked_color">#333333</color>
+    <color name="main_bottomNav_unchecked_color">#9C9C9C</color>
 
 </resources>

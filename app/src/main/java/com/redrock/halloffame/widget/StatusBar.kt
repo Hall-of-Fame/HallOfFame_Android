@@ -8,7 +8,7 @@ import android.view.View
  * .....
  * @author 985892345
  * @email 2767465918@qq.com
- * @data 2021/6/8
+ * @date 2021/6/8
  */
 class StatusBar(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     var mStatusBarHeight = 0

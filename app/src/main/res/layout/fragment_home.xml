@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -9,5 +10,78 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.redrock.halloffame.widget.SlideUpLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.ndhzs.slideshow.SlideShow
+                    android:id="@+id/slideShow_fragment_home_banner"
+                    android:transitionName="bannerImg"
+                    android:layout_width="0dp"
+                    android:layout_height="240dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tl_fragment_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:theme="@style/Theme.MaterialComponents"
+                    app:tabGravity="fill"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabIndicatorHeight="3dp"
+                    app:tabMaxWidth="160dp"
+                    app:tabMinWidth="150dp"
+                    app:tabMode="fixed"
+                    app:tabPaddingEnd="40dp"
+                    app:tabPaddingStart="40dp"
+                    app:tabRippleColor="@android:color/transparent"
+                    app:tabTextAppearance="@style/fragment_home_tab_style" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"
+                    app:cardMaxElevation="6dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/store_tl_stamp_center"
+                    app:layout_constraintStart_toStartOf="@+id/store_tl_stamp_center"
+                    app:layout_constraintTop_toBottomOf="@+id/store_tl_stamp_center">
+
+                    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                        android:id="@+id/refreshLayout_fragment_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="8dp"
+                        android:paddingTop="2dp">
+
+                        <com.ndhzs.slideshow.SlideShow
+                            android:id="@+id/slideShow_fragment_home_page"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </com.redrock.halloffame.widget.SlideUpLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

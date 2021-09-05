@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="bean"
+            type="com.redrock.halloffame.page.home.ui.bean.Person" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_recycler_item_home_rank_list_outer"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="4dp"
+        app:cardCornerRadius="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_recycler_item_home_rank_list_head"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="2dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_recycler_item_home_rank_list_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:shapeAppearanceOverlay="@style/shapeableImageView_circle"/>
+
+            <TextView
+                android:id="@+id/tv_recycler_item_home_rank_list_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:text="@{bean.name}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/iv_recycler_item_home_rank_list_head"
+                app:layout_constraintStart_toStartOf="@+id/iv_recycler_item_home_rank_list_head"
+                app:layout_constraintTop_toBottomOf="@+id/iv_recycler_item_home_rank_list_head"
+                tools:text="邱天" />
+
+            <TextView
+                android:id="@+id/tv_recycler_item_home_rank_list_department"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="4dp"
+                android:text="@{`部门: `+bean.department}"
+                app:layout_constraintBottom_toTopOf="@+id/tv_recycler_item_home_rank_list_grade"
+                app:layout_constraintStart_toEndOf="@+id/iv_recycler_item_home_rank_list_head"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="部门: 移动" />
+
+            <TextView
+                android:id="@+id/tv_recycler_item_home_rank_list_grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`年级: `+bean.grade}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_recycler_item_home_rank_list_department"
+                app:layout_constraintTop_toBottomOf="@+id/tv_recycler_item_home_rank_list_department"
+                tools:text="年级: 20" />
+
+            <TextView
+                android:id="@+id/tv_recycler_item_home_rank_list_sticker_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="10dp"
+                android:text="@{`表情包总数: `+bean.stickers.size()}"
+                app:layout_constraintBottom_toTopOf="@+id/rv_recycler_item_home_rank_list_stickers"
+                app:layout_constraintStart_toStartOf="@+id/rv_recycler_item_home_rank_list_stickers"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="表情包总数: 99"
+                tools:ignore="SpUsage" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recycler_item_home_rank_list_stickers"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_recycler_item_home_rank_list_ranking"
+                app:layout_constraintStart_toEndOf="@+id/tv_recycler_item_home_rank_list_grade"
+                app:layout_constraintTop_toBottomOf="@+id/tv_recycler_item_home_rank_list_sticker_count" />
+
+            <TextView
+                android:id="@+id/tv_recycler_item_home_rank_list_ranking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:textSize="36sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="1"
+                tools:textColor="#BA1111" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -562,6 +562,7 @@ class SimpleRvAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     abstract class DBItem<DB: ViewDataBinding, T> : Item<T> {
         constructor(map: Map<Int, T>, @LayoutRes layoutId: Int) : super(map, layoutId)
         constructor(list: List<T>, startPosition: Int, @LayoutRes layoutId: Int) : super(list, startPosition, layoutId)
+
         /**
          * 在 item 创建时的回调, 建议在此处进行一些只需进行一次的操作, 如: 设置点击监听、设置用于 item 整个生命周期的对象
          *
