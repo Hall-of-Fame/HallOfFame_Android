@@ -11,6 +11,7 @@
         android:layout_height="match_parent">
 
         <com.redrock.halloffame.widget.SlideUpLayout
+            android:id="@+id/slideLayout_fragment_home"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -20,16 +21,14 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="200dp">
 
                 <com.ndhzs.slideshow.SlideShow
                     android:id="@+id/slideShow_fragment_home_banner"
                     android:transitionName="bannerImg"
-                    android:layout_width="0dp"
-                    android:layout_height="240dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginEnd="32dp" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp" />
 
             </FrameLayout>
 
@@ -42,26 +41,26 @@
                     android:id="@+id/tl_fragment_home"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
                     android:backgroundTint="@android:color/transparent"
                     android:theme="@style/Theme.MaterialComponents"
                     app:tabGravity="fill"
-                    app:tabIndicatorFullWidth="false"
                     app:tabIndicatorHeight="3dp"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabIndicatorColor="@android:color/darker_gray"
                     app:tabMaxWidth="160dp"
                     app:tabMinWidth="150dp"
                     app:tabMode="fixed"
                     app:tabPaddingEnd="40dp"
                     app:tabPaddingStart="40dp"
                     app:tabRippleColor="@android:color/transparent"
-                    app:tabTextAppearance="@style/fragment_home_tab_style" />
+                    app:tabTextAppearance="@style/fragment_home_tab_style"
+                    app:tabTextColor="@color/black"/>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="1dp"
-                    app:cardMaxElevation="6dp"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="1dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/store_tl_stamp_center"
                     app:layout_constraintStart_toStartOf="@+id/store_tl_stamp_center"
@@ -71,8 +70,7 @@
                         android:id="@+id/refreshLayout_fragment_home"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingBottom="8dp"
-                        android:paddingTop="2dp">
+                        android:paddingTop="10dp">
 
                         <com.ndhzs.slideshow.SlideShow
                             android:id="@+id/slideShow_fragment_home_page"

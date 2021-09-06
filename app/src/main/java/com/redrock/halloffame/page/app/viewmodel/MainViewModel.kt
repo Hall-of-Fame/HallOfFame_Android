@@ -19,7 +19,7 @@ class MainViewModel : ViewModel() {
     var departmentBean = liveDataLaunch { MainClient.getDepartmentBean() }
 
     val stickersRankTreeSet = switchMapLiveDataLaunch(departmentBean) {
-        val treeMap = TreeSet<Person>{ o1, o2 -> o1.stickers.size - o2.stickers.size }
+        val treeMap = TreeSet<Person>{ o1, o2 -> o2.stickers.size - o1.stickers.size }
         it.data.forEach { department ->
             department.grades.forEach { grade ->
                 grade.students.forEach { student ->

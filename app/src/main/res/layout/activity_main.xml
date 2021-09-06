@@ -10,6 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:paddingTop="10dp"
         tools:context=".view.activity.MainActivity">
 
         <com.ndhzs.slideshow.SlideShow
@@ -25,8 +27,8 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#CDCDCD"
+            android:layout_height="1px"
+            android:background="#99CDCDCD"
             app:layout_constraintBottom_toBottomOf="@+id/main_slideShow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -18,9 +18,7 @@ import com.redrock.halloffame.page.third.ui.fragment.ThirdFragment
  * @email 2767465918@qq.com
  * @date 2021/9/2
  */
-class MainActivity : BaseBindingVmActivity<MainViewModel, ActivityMainBinding>(
-    false, false
-){
+class MainActivity : BaseBindingVmActivity<MainViewModel, ActivityMainBinding>(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

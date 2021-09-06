@@ -13,6 +13,6 @@ import retrofit2.http.GET
  */
 interface MainApiService {
 
-    @GET()
+    @GET("/departments")
     fun getDepartmentBean(): Call<DepartmentBean>
 }

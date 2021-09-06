@@ -58,7 +58,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     // 郭祥瑞的库————SlideShow
-    implementation 'com.github.985892345:SlideShow_Library:1.0.2'
+//    implementation 'com.github.985892345:SlideShow_Library:1.0.2'
+    implementation project(':slideshow')
 
     // PhotoView
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'

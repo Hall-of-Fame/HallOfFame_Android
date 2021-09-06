@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
-import com.bumptech.glide.Glide
 import com.github.chrisbanes.photoview.PhotoView
 import com.ndhzs.slideshow.SlideShow
 import com.redrock.halloffame.R

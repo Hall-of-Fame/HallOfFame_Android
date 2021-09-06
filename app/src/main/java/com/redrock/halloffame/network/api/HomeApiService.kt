@@ -13,6 +13,6 @@ import retrofit2.http.GET
  */
 interface HomeApiService {
 
-    @GET()
+    @GET("/popular")
     fun getBannerBean(): Call<BannerBean>
 }

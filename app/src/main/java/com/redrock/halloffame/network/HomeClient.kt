@@ -1,9 +1,8 @@
 package com.redrock.halloffame.network
 
+import com.redrock.halloffame.base.BaseClient
 import com.redrock.halloffame.network.api.HomeApiService
-import retrofit2.Retrofit
 import retrofit2.await
-import retrofit2.converter.gson.GsonConverterFactory
 
 /**
  * ...
@@ -13,10 +12,5 @@ import retrofit2.converter.gson.GsonConverterFactory
  * @time 23:02
  */
 object HomeClient {
-    private val retrofit = Retrofit.Builder()
-        .baseUrl("https://cn.bing.com/")
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-    private val apiService = retrofit.create(HomeApiService::class.java)
-    suspend fun getDepartmentBean() = apiService.getBannerBean().await()
+    suspend fun getBannerBean() = BaseClient.api(HomeApiService::class.java).getBannerBean().await()
 }

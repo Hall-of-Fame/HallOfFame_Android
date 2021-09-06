@@ -13,9 +13,9 @@ import com.redrock.halloffame.utils.liveDataLaunch
  */
 class HomeViewModel : ViewModel() {
 
-    var bannerData = liveDataLaunch { HomeClient.getDepartmentBean() }
+    var bannerData = liveDataLaunch { HomeClient.getBannerBean() }
 
     fun refreshBanner() {
-        bannerData = liveDataLaunch{ HomeClient.getDepartmentBean() }
+        bannerData = liveDataLaunch{ HomeClient.getBannerBean() }
     }
 }

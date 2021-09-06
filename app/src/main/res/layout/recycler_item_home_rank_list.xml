@@ -12,9 +12,10 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView_recycler_item_home_rank_list_outer"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="140dp"
         android:layout_margin="4dp"
-        app:cardCornerRadius="8dp">
+        app:cardCornerRadius="8dp"
+        app:cardElevation="1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -73,14 +74,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:textSize="10dp"
                 android:text="@{`表情包总数: `+bean.stickers.size()}"
+                android:textSize="10dp"
                 app:layout_constraintBottom_toTopOf="@+id/rv_recycler_item_home_rank_list_stickers"
                 app:layout_constraintStart_toStartOf="@+id/rv_recycler_item_home_rank_list_stickers"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed"
-                tools:text="表情包总数: 99"
-                tools:ignore="SpUsage" />
+                tools:ignore="SpUsage"
+                tools:text="表情包总数: 99" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_recycler_item_home_rank_list_stickers"

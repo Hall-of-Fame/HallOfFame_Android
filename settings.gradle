@@ -1,2 +1,3 @@
 rootProject.name = "HallofFame"
 include ':app'
+include ':slideshow'

@@ -4,6 +4,7 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Rect
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +20,7 @@ import kotlin.math.pow
 /**
  * 用于首页板块上下滑控件
  *
- * **WARNING:** 只有第一层下的第一个 View(ViewGroup) 才能改变大小,
+ * **WARNING:** 只有第一层下的第一个 View(ViewGroup) 才能改变大小, 且必须设置为具体的大小
  * 第二个 View(ViewGroup) 在设置为 match_parent 的情况下才会有隐藏于屏幕底外的高度
  *
  * **原理:** 使用了嵌套滑动, 具体实现思路可以查看 [onNestedPreScroll]、[onNestedScroll]
@@ -526,7 +527,7 @@ class SlideUpLayout(
                     mSlowlyMoveAnimate = null
                 }
             )
-            interpolator = OvershootInterpolator()
+            interpolator = OvershootInterpolator(1F)
             duration = (abs(newY - oldY).toDouble().pow(0.9) + 280).toLong()
             start()
         }
